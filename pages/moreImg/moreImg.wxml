@@ -1,0 +1,4 @@
+<!--pages/moreImg/moreImg.wxml-->
+<view class="container">
+  <bigImg imgShowData="{{imgShowData}}"/>
+</view>

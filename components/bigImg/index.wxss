@@ -1,0 +1,49 @@
+/* components/bigImg/index.wxss */
+
+.imgShow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20rpx;
+}
+
+.imgComponent {
+  margin-bottom: 30rpx;
+  width: 220rpx;
+  height: 350rpx;
+}
+
+.imgComponent image {
+  width: 100%;
+  height: 100%;
+}
+
+view.show {
+  display: flex;
+}
+
+.bigImgContainer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100vw;
+  height: 100%;
+}
+
+.content {
+  border: 1px solid #fff;
+  margin: auto;
+}
+
+.content image {
+  vertical-align: top;
+}
+
+.content .title {
+  border-top: 1px solid #fff;
+  text-align: center;
+  color: #000;
+  background-color: #fff;
+}

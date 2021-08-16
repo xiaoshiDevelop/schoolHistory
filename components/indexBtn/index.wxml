@@ -1,0 +1,5 @@
+<!--components/indexBtn/index.wxml-->
+<view class="commonStyle" data-url="{{url}}" bind:tap="onDirectTo">
+  <view class="btnText">{{text}}</view>
+  <image class="bgcImg" src="{{src}}"></image>
+</view>

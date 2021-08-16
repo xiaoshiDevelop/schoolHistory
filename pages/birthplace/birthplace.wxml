@@ -1,0 +1,33 @@
+<!--pages/birthplace/birthplace.wxml-->
+<view class="container">
+  <my-swiper s-class="swiperStyle" imgList="{{revImgList}}" />
+  <view class="navBar">
+    <view class="header">
+      <view class="headerInfo {{currentTab === 1 ? 'infoCurrent': ''}}" bind:tap="changeNavTab" data-id="1">源东乡叶村</view>
+      <view class="headerInfo {{currentTab === 2 ? 'infoCurrent': ''}}" bind:tap="changeNavTab" data-id="2">浙江金华</view>
+      <view class="headerInfo {{currentTab === 3 ? 'infoCurrent': ''}}" bind:tap="changeNavTab" data-id="3">施存统故居</view>
+    </view>
+    <view class="body">
+      <view class="bodyInfo {{currentTab === 1 ? 'bodyCurrent': ''}}">
+        <view class="introduce">
+          源东乡叶村简介。
+        </view>
+      </view>
+      <view class="bodyInfo {{currentTab === 2 ? 'bodyCurrent': ''}}">
+        <view class="introduce">
+         金华，古称婺州，浙江省地级市，长江三角洲中心区27城之一，自秦王政二十五年建县，因其“地处金星与婺女两星争华之处”得名金华。位于浙江省中部，金华市下辖2个区、3个县、4个县级市。 金华文化属吴越文化，金华人属江浙民系，使用吴语。2013年1月29日，中华人民共和国住建部列金华市为第一批智慧城市试点。同时，金华还是国家级历史文化名城、中国十佳宜居城市之一、G60科创走廊中心城市。
+         2020年7月，全国爱卫会确认金华市为2019年国家卫生城市。
+        </view>
+      </view>
+      <view class="bodyInfo {{currentTab === 3 ? 'bodyCurrent': ''}}">
+        <view class="directBtn1"    bind:tap="birth_sub1">
+         <indexBtn url="/pages/birthplace/birthplace" src="../../img/baricon/indexBGC.jpg" text="故居介绍" />
+        </view>
+
+        <view class="directBtn2"    bind:tap="birth_sub2">
+         <indexBtn url="/pages/birthplace/birthplace" src="../../img/baricon/indexBGC.jpg" text="讲解员采访记录" />
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

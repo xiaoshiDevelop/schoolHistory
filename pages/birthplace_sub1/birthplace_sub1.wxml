@@ -1,0 +1,15 @@
+<!--pages/birthplace/birthplace_sub1.wxml-->
+
+<view class="container">
+  <my-swiper s-class="swiperStyle" imgList="{{revImgList}}" />
+  
+  
+    <view class="body">
+      <view class="introduce">
+        故居简介
+      </view>
+   
+    </view>
+  
+</view>
+

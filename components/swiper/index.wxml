@@ -1,0 +1,9 @@
+<!--components/swiper/index.wxml-->
+
+<swiper class="swiper s-class" autoplay circular>
+  <block>
+    <swiper-item wx:for="{{imgList}}" wx:key="index">
+      <image src="{{item}}"></image>
+    </swiper-item>
+  </block>
+</swiper>

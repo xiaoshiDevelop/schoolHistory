@@ -1,0 +1,13 @@
+<!--pages/birthplace_sub/birthplace_sub2.wxml-->
+<view class="container">
+
+  
+  
+    <view class="body">
+      <view class="introduce">
+        采访记录
+      </view>
+   
+    </view>
+  
+</view>

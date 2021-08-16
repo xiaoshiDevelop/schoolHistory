@@ -1,0 +1,21 @@
+<!--pages/revolution/revolution.wxml-->
+<view class="container">
+  <my-swiper s-class="swiperStyle" imgList="{{revImgList}}" />
+  <view class="navBar">
+    <view class="header">
+      <view class="headerInfo {{currentTab === 1 ? 'infoCurrent': ''}}" bind:tap="changeNavTab" data-id="1">相关介绍</view>
+      <view class="headerInfo {{currentTab === 2 ? 'infoCurrent': ''}}" bind:tap="changeNavTab" data-id="2">图片展示</view>
+    </view>
+    <view class="body">
+      <view class="bodyInfo {{currentTab === 1 ? 'bodyCurrent': ''}}">
+        <view class="introduce">
+          上海市大沽路400-402号的中国社会主义青年团临时中央局机关遗址，这里是共青团临时中央局1921年11月从渔阳里6号退租后的临时办公地点，是渔阳里之后的青年革命大本营。虽然社会主义青年团在此只工作了七个月，但是在此期间完成了团的思想建设、组织建设和制度体系的建立。
+        </view>
+      </view>
+      <view class="bodyInfo {{currentTab === 2 ? 'bodyCurrent': ''}}">
+        <bigImg imgShowData="{{imgShowData}}" />
+        <view class="more" bind:tap="toMorePage">更多图片 >></view>
+      </view>
+    </view>
+  </view>
+</view>

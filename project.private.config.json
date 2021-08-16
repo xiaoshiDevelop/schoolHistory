@@ -1,0 +1,48 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "birthplace",
+          "pathName": "pages/birthplace/birthplace",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "studyPlace",
+          "pathName": "pages/studyPlace/studyPlace",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "revolution",
+          "pathName": "pages/revolution/revolution",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "shangDaHistory",
+          "pathName": "pages/shangDaHistory/shangDaHistory",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "peopleInfo",
+          "pathName": "pages/peopleInfo/peopleInfo",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

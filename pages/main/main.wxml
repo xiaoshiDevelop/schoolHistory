@@ -1,0 +1,19 @@
+<!--pages/main/main.wxml-->
+<view class="container">
+  <my-swiper s-class="swiper" imgList="{{swiperImgList}}" />
+  <view class="directBtn">
+    <indexBtn url="/pages/birthplace/birthplace" src="../../img/baricon/indexBGC.jpg" text="探寻出生地" />
+    <indexBtn url="/pages/studyPlace/studyPlace" src="../../img/baricon/indexBGC.jpg" text="探访求学地" />
+    <indexBtn url="/pages/revolution/revolution" src="../../img/baricon/indexBGC.jpg" text="追忆革命地" />
+    <indexBtn url="/pages/shangDaHistory/shangDaHistory" src="../../img/baricon/indexBGC.jpg" text="宣扬上大史" />
+    <indexBtn url="/pages/peopleInfo/peopleInfo" src="../../img/baricon/indexBGC.jpg" text="人物风采" />
+  </view>
+  <view class="introduce">
+    <view class="title">
+      人物介绍
+    </view>
+    <view class="text">
+      1922年1月，施存统同志从日本回国，中共中央派他负责团临时中央局工作，并租下大沽路400—402号，作为临时中央局机关办公地点。机关内设“马克思学说研究会”，陈列各种进步思想的书籍报纸，青年学生入内观看，不取分文。1922年初，施存统在上海负责团的临时中央局和上海地方团组织日常工作，不久又主办中国社会主义青年团机关刊物《先驱》。在党中央准备召开中国社会主义青年团第一次全国代表大会时，施存统日夜奔忙。1922年5月，团的“一大”在广州召开，施存统在会上作了团临时中央局与上海团的情况报告，并被大会选为团的第一届中央执行委员会委员、书记。施存统在负责团临时中央局的工作期间，加强团的建设，在青年中宣传马克思主义，积极引领青年投身革命运动。
+    </view>
+  </view>
+</view>

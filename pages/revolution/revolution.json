@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "my-swiper": "/components/swiper/index",
+    "bigImg": "/components/bigImg/index"
+  },
+  "navigationBarTitleText": "追忆革命地"
+}

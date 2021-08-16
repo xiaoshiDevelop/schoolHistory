@@ -1,0 +1,67 @@
+/* pages/revolution/revolution.wxss */
+
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.swiperStyle {
+  height: 400rpx;
+}
+
+.navBar {
+  height: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  border: 1px solid #ff9898;
+  margin-top: 10rpx;
+  height: 60rpx;
+}
+
+view.infoCurrent {
+  background-color: #ff4a4a;
+  color: #fff;
+}
+
+.headerInfo {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-size: 28rpx;
+  color: #ff4a4a;
+}
+
+.body {
+  flex: 1;
+}
+
+view.bodyCurrent {
+  display: block;
+}
+
+.bodyInfo {
+  height: 100%;
+  display: none;
+}
+
+.more {
+  position: absolute;
+  right: 20rpx;
+  bottom: 10rpx;
+  font-size: 24rpx;
+}
+
+.introduce {
+  padding: 20rpx 40rpx;
+  font-size: 28rpx;
+  line-height: 1.5;
+}

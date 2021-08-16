@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "bigImg": "/components/bigImg/index"
+  },
+  "navigationBarTitleText": "更多图片"
+}
