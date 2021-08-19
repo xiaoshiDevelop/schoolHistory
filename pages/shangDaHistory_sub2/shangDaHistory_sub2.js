@@ -1,24 +1,12 @@
-// pages/shangDaHistory/shangDaHistory.js
+// pages/birthplace/birthplace_sub1.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    revImgList: ["../../img/shangdashi2.jpg", "../../img/shandashi1.jpg"],
-    currentTab: 2,
+    revImgList: ["../../img/dangshigushi2.jpg"]
   },
-
-  changeNavTab(evt) {
-    //切换tab栏的点击事件，通过修改data中的currentTab实现
-    const currentIdx = evt.target.dataset.id;
-    if(this.data.currentTab !== currentIdx) {
-      this.setData({
-        currentTab: +currentIdx
-      })
-    }
-  },
-
 
   /**
    * 生命周期函数--监听页面加载
@@ -74,18 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  
-
-  shangDaHistory_sub1() {
-    wx.navigateTo({
-      url: '../shangDaHistory_sub1/shangDaHistory_sub1',                                                 
-    })
-  },
-  shangDaHistory_sub2() {
-    wx.navigateTo({
-      url: '../shangDaHistory_sub2/shangDaHistory_sub2',                                                 
-    })
   }
-  
 })

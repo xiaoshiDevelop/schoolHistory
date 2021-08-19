@@ -1,2 +1,38 @@
 <!--pages/shangDaHistory/shangDaHistory.wxml-->
-<text>pages/shangDaHistory/shangDaHistory.wxml</text>
+<view class="container">
+  <my-swiper s-class="swiperStyle" imgList="{{revImgList}}" />
+  <view class="navBar">
+    <view class="header">
+      <view class="headerInfo {{currentTab === 1 ? 'infoCurrent': ''}}" bind:tap="changeNavTab" data-id="1">上大党史</view>
+      <view class="headerInfo {{currentTab === 2 ? 'infoCurrent': ''}}" bind:tap="changeNavTab" data-id="2">党史故事</view>
+      <view class="headerInfo {{currentTab === 3 ? 'infoCurrent': ''}}" bind:tap="changeNavTab" data-id="3">走进社区</view>
+      <view class="headerInfo {{currentTab === 4 ? 'infoCurrent': ''}}" bind:tap="changeNavTab" data-id="4">科技助老</view>
+    </view>
+    <view class="body">
+      <view class="bodyInfo {{currentTab === 1 ? 'bodyCurrent': ''}}">
+        <view class="introduce">
+            四个阶段：1922年－1927年（国共合办）1941年－1946年（汪伪开办）1983年－1994年（复旦分校等合并开办）1994年－今 （在上海大学基础上四合一开办）
+        </view>
+      </view>
+      <view class="bodyInfo {{currentTab === 2 ? 'bodyCurrent': ''}}">
+        <view class="directBtn1"    bind:tap="shangDaHistory_sub1">
+         <indexBtn url="/pages/shangDaHistory_sub1/shangDaHistory_sub1" src="../../img/baricon/indexBGC.jpg" text="党史故事1" />
+        </view>
+
+        <view class="directBtn2"    bind:tap="shangDaHistory_sub2">
+         <indexBtn url="/pages/shangDaHistory_sub2/shangDaHistory_sub2" src="../../img/baricon/indexBGC.jpg" text="党史故事2" />
+        </view>
+      </view>
+      <view class="bodyInfo {{currentTab === 3 ? 'bodyCurrent': ''}}">
+        <view class="introduce">
+         活动照片、宣传稿
+        </view>
+      </view>
+      <view class="bodyInfo {{currentTab === 4 ? 'bodyCurrent': ''}}">
+        <view class="introduce">
+         活动照片、宣传稿
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

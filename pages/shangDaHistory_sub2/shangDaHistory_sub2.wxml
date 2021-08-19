@@ -1,0 +1,15 @@
+<!--pages/birthplace/birthplace_sub1.wxml-->
+
+<view class="container">
+  <my-swiper s-class="swiperStyle" imgList="{{revImgList}}" />
+  
+  
+    <view class="body">
+      <view class="introduce">
+        党史故事2
+      </view>
+   
+    </view>
+  
+</view>
+

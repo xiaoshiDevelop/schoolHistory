@@ -1,0 +1,6 @@
+/* pages/birthplace/birthplace_sub1.wxss */
+
+.swiperStyle {
+  margin: 50rpx;
+  height: 400rpx;
+}
