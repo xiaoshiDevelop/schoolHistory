@@ -1,1 +1,106 @@
 /* pages/studyPlace/studyPlace.wxss */
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.swiperStyle {
+  height: 400rpx;
+}
+
+.navBar {
+  height: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  border: 1px solid #ff9898;
+  margin-top: 10rpx;
+  height: 60rpx;
+}
+
+view.infoCurrent {
+  background-color: #ff4a4a;
+  color: #fff;
+}
+
+.headerInfo {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-size: 28rpx;
+  color: #ff4a4a;
+}
+
+.body {
+  flex: 1;
+  padding-bottom: 40rpx ;
+}
+
+view.bodyCurrent {
+  display: block;
+}
+
+.bodyInfo {
+  height: 100%;
+  display: none;
+}
+
+.more {
+  position: absolute;
+  right: 20rpx;
+  bottom: 10rpx;
+  font-size: 24rpx;
+}
+
+/* 学校介绍——标题 */
+.school_headline {
+  padding: 70rpx  10rpx  30rpx  10rpx;
+  font-size: 46rpx;
+  text-align: center;     /* 居中 */
+  font-family:cursive;
+  font-weight: bold;
+}
+/* 学校介绍——内容 */
+.introduce {
+  padding: 10rpx  60rpx  10rpx  60rpx;
+  font-size: 34rpx;
+  line-height: 1.5;
+  text-indent: 2em;
+  font-family:cursive;
+}
+
+/* 求学历程样式 */
+.qiuxue_container{
+  padding: 20rpx;
+  width: 90%; 
+  margin: 0 auto;
+}
+.box_container{
+  float: left;
+  font-size: 24rpx;
+  text-align: center;
+  width: 30%;
+  padding-right: 5%;
+  padding-top: 15rpx;
+  padding-bottom: 15rpx;
+}
+.box_container_right{
+  float: left;
+  font-size: 24rpx;
+  text-align: center;
+  width: 30%;
+  padding-top: 15rpx;
+  padding-bottom: 15rpx;
+}
+.qiuxue_img{
+  width: 100%;
+  height: 240rpx;
+}
+

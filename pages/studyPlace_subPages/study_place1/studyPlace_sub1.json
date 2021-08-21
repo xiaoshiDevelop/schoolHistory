@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "my-swiper": "/components/swiper/index"
+  },
+  "navigationBarTitleText": "求学历程"
+}
