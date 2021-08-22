@@ -1,4 +1,7 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "my-swiper": "/components/swiper/index",
+    "indexBtn": "/components/study_place_btn/index"
+  },
   "navigationBarTitleText": "探访求学地"
 }

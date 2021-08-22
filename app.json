@@ -10,7 +10,15 @@
     "pages/birthplace_sub1/birthplace_sub1",
     "pages/birthplace_sub2/birthplace_sub2",
     "pages/shangDaHistory_sub1/shangDaHistory_sub1",
-    "pages/shangDaHistory_sub2/shangDaHistory_sub2"
+    "pages/shangDaHistory_sub2/shangDaHistory_sub2",
+    "pages/studyPlace_subPages/study_place1/studyPlace_sub1",
+    "pages/studyPlace_subPages/study_place2/studyPlace_sub2",
+    "pages/studyPlace_subPages/study_place3/study_place3",
+    "pages/studyPlace_subPages/study_place4/study_place4",
+    "pages/studyPlace_subPages/study_place5/study_place5",
+    "pages/studyPlace_subPages/study_place6/study_place6",
+    "pages/studyPlace_subPages/study_place7/study_place7",
+    "pages/studyPlace_subPages/study_place8/study_place8"
   ],
   "window": {
     "backgroundTextStyle": "light",

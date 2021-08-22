@@ -1,2 +1,112 @@
 <!--pages/studyPlace/studyPlace.wxml-->
-<text>pages/studyPlace/studyPlace.wxml</text>
+<view class="container">
+  <my-swiper s-class="swiperStyle" imgList="{{revImgList}}" />
+  <view class="navBar">
+    <view class="header">
+      <view class="headerInfo {{currentTab === 1 ? 'infoCurrent': ''}}" bind:tap="changeNavTab" data-id="1">浙江省第一师范</view>
+      <view class="headerInfo {{currentTab === 2 ? 'infoCurrent': ''}}" bind:tap="changeNavTab" data-id="2">求学历程</view>
+      <view class="headerInfo {{currentTab === 3 ? 'infoCurrent': ''}}" bind:tap="changeNavTab" data-id="3">我心中的施存统</view>
+    </view>
+    <view class="body">
+      <view class="bodyInfo {{currentTab === 1 ? 'bodyCurrent': ''}}">
+      <!--  学校简介  -->
+        <view class="school_headline">
+          浙江省立第一师范学校
+        </view>
+        <view class="introduce">
+          浙江省立第一师范学校（现杭州高级中学）是中国建立最早的六大著名师范之一，前身是创建于1908年的浙江官立两级师范学堂。省立一师是浙江新文化运动中心，享有“北有京师学堂，南有浙江一师”的美誉。
+        </view>
+        <view class="introduce">
+          学校充满自由民主气氛，出现生动活泼局面，诞生了浙江最早的美术展、音乐会和话剧表演以及中国最早的人体写生教学，在浙江开启了校际联合运动会、校园农业实习和校园白话文教育，《送别》、《春游》等学堂乐歌也由此传遍全国。浙江一师独领时代风骚，成为浙江新文化运动中心，与长沙的湖南第一师范齐名，时誉“两个一师”。陈望道在回忆中称：“五四”时期在全国范围内，“高等学校以北大最活跃，在中等学校，则要算是湖南第一师范和杭州第一师范了”。
+          1919年11月，浙江一师学生施存统、俞秀松，联合省立一中学生查猛济、阮毅成、甲种工业学校学生沈乃熙（即夏衍）等，于11月1日创办《浙江新潮》周刊，主张社会改造，成为浙江最早受俄国十月革命影响宣传社会主义的刊物，被认作“宣传新思想最显明的旗帜”。
+        </view>
+        <view class="introduce">
+          施存统在夏丏尊、陈望道、刘大白等教师思想的影响下，在第二期上发表《非孝》一文，向家族制度发难，在浙江学界率先揭开反礼教斗争的序幕，被守旧势力视为“洪水猛兽”。刊物遭北洋政府电令查禁。省教育厅下令开除学生施存统并解聘新派教员，经亨颐拒绝执行。
+        </view>
+        <view class="introduce">
+          1919年11月16日，浙江一师学生自治会正式成立，宣告其宗旨为“尊重个人的人格，发展互助的能力，养成自治的习惯，练习共同的生活，建设模范的社会”。此事开全省风气之先，以后各地学校相继起而仿效。
+        </view>
+        <view class="introduce">
+          浙江一师为整个近现代中国社会的进步提供了举世公认的强有力的人才保障和智力支撑。从浙江一师大门迈出的莘莘学子中，有一大批成为中共早期骨干，他们是俞秀松、施存统、杨贤江、华林、王贯三、瞿景白……。“一师风潮”为中国共产党、中国共青团以及杭州地方党、团组织的创立与发展奠定了干部基础，该校进步师生同时还在马克思主义的传播中，在倡导知识分子走与工农相结合的道路等重大问题上，也做出了重要贡献。
+        </view>
+        <view>
+        </view>
+      </view> <!-- bodyinfo 学校介绍 -->
+
+    <!-- 求学/革命 历程 -->
+      <view class="bodyInfo {{currentTab === 2 ? 'bodyCurrent': ''}}">
+        <!-- 布局：上面图片，下面文字 点击弹出详细介绍-->
+        <!-- 容器1：浙江省立第一中学求学-->
+        <view class="qiuxue_container">
+          <view class="box_container" bind:tap="study_sub1">
+            <!-- 图片部分 -->
+            <image class="qiuxue_img" src='../../img/study_place/qiuxue/shi_1.jpg'></image>
+            <!-- 文字部分 -->
+            <view> 求学历程 </view>
+          </view><!-- 容器1：浙江省立第一中学求学-->
+
+          <!-- 容器2：放弃参加中共一大-->
+          <view class="box_container" bind:tap="study_sub2">
+            <!-- 图片部分 -->
+            <image class="qiuxue_img" src='../../img/study_place/qiuxue/中共一大.jpg'></image>
+            <!-- 文字部分 -->
+            <view> 放弃参加中共一大 </view>
+          </view><!-- 容器2：放弃参加中共一大-->
+        
+          <!-- 容器3：当选团中央书记-->
+          <view class="box_container_right" bind:tap="study_sub3">
+            <!-- 图片部分 -->
+            <image class="qiuxue_img" src='../../img/study_place/qiuxue/中国社会主义青年团旧址.jpg'></image>
+            <!-- 文字部分 -->
+            <view> 当选团中央书记 </view>
+          </view><!-- 容器3：当选团中央书记-->
+
+          <!-- 容器4：上海大学任教 -->
+          <view class="box_container" bind:tap="study_sub4">
+            <!-- 图片部分 -->
+            <image class="qiuxue_img" src='../../img/study_place/qiuxue/上海大学任教.jpg'></image>
+            <!-- 文字部分 -->
+            <view> 上海大学任教 </view>
+          </view><!-- 容器4：上海大学任教 -->
+
+          <!-- 容器5：民主革命的战士 -->
+          <view class="box_container" bind:tap="study_sub5">
+            <!-- 图片部分 -->
+            <image class="qiuxue_img" src='../../img/study_place/qiuxue/民主建国会_2.jpg'></image>
+            <!-- 文字部分 -->
+            <view> 民主革命的战士 </view>
+          </view><!-- 容器5：民主革命的战士 -->
+
+          <!-- 容器6：《浙潮第一声》 -->
+          <view class="box_container_right" bind:tap="study_sub6">
+            <!-- 图片部分 -->
+            <image class="qiuxue_img" src='../../img/study_place/qiuxue/浙潮第一声封面.jpg'></image>
+            <!-- 文字部分 -->
+            <view> 《浙潮第一声》 </view>
+          </view><!-- 容器6：《浙潮第一声》 -->
+
+          <!-- 容器7：《浙江新潮》 -->
+          <view class="box_container" bind:tap="study_sub7">
+            <!-- 图片部分 -->
+            <image class="qiuxue_img" src='../../img/study_place/qiuxue/浙江新潮2.jpg'></image>
+            <!-- 文字部分 -->
+            <view> 《浙江新潮》 </view>
+          </view><!-- 容器7：《浙江新潮》 -->
+
+          <!-- 容器8：《非孝》 -->
+          <view class="box_container" bind:tap="study_sub8">
+            <!-- 图片部分 -->
+            <image class="qiuxue_img" src='../../img/study_place/qiuxue/非孝.jpg'></image>
+            <!-- 文字部分 -->
+            <view> 《非孝》 </view>
+          </view><!-- 容器8：《非孝》 -->
+
+        </view>
+      </view><!-- bodyinfo 求学历程 -->
+
+      <view class="bodyInfo {{currentTab === 3 ? 'bodyCurrent': ''}}">
+       师生采访资料
+      </view>
+    </view>
+  </view>
+</view>

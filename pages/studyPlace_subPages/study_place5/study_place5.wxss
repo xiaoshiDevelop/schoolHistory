@@ -1,0 +1,30 @@
+/* pages/studyPlace_subPages/study_place5/study_place5.wxss */
+
+
+.body {
+  flex: 1;
+  padding-bottom: 80rpx ;
+}
+
+view.bodyCurrent {
+  display: block;
+}
+
+.more {
+  position: absolute;
+  right: 20rpx;
+  bottom: 10rpx;
+  font-size: 24rpx;
+}
+/* 详细介绍内容 */
+.introduce {
+  padding: 10rpx  60rpx  10rpx  60rpx;
+  font-size: 34rpx;
+  line-height: 1.5;
+  text-indent: 2em;
+  font-family:cursive;
+}
+.sub_qiuxue_image {
+  padding: 6rpx 20rpx 6rpx 20rpx;
+  margin: 0 auto;
+}
