@@ -1,2 +1,7 @@
 <!--pages/peopleInfo/peopleInfo.wxml-->
-<text>pages/peopleInfo/peopleInfo.wxml</text>
+<view class="container">
+  <my-swiper s-class="swiperStyle" imgList="{{imgList}}" />
+  <view class="introduce">
+    人物介绍
+  </view>
+</view>

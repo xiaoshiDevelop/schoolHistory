@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    imgList: ["../../img/study_place/qiuxue/shi_1.jpg", "../../img/study_place/qiuxue/非孝.jpg", "../../img/study_place/qiuxue/上海社会主义青年团.jpg"]
   },
 
   /**

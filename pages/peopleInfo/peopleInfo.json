@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "my-swiper": "/components/swiper/index"
+  },
   "navigationBarTitleText": "人物风采"
 }
