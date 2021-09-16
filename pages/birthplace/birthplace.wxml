@@ -10,7 +10,7 @@
     <view class="body">
       <view class="bodyInfo {{currentTab === 1 ? 'bodyCurrent': ''}}">
         <view class="introduce">
-          源东乡叶村简介。
+          {{villageIntroduce}}
         </view>
       </view>
       <view class="bodyInfo {{currentTab === 2 ? 'bodyCurrent': ''}}">

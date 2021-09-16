@@ -72,7 +72,16 @@
     margin-top: 100rpx ;
   }
   .introduce {
-    padding: 80rpx  60rpx  40rpx  60rpx;
+    padding: 40rpx  60rpx  40rpx  60rpx;
     font-size: 28rpx;
     line-height: 1.5;
+  }
+  .introduceTitle {
+    font-size: 32rpx;
+    font-weight: 700;
+  }
+  .introduceText {
+    font-size: 30rpx;
+    line-height: 1.5;
+    margin: 15rpx 0;
   }

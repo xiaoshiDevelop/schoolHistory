@@ -11,10 +11,14 @@
     <view class="body">
       <view class="bodyInfo {{currentTab === 1 ? 'bodyCurrent': ''}}">
         <view class="introduce">
-            四个阶段：1922年－1927年（国共合办）1941年－1946年（汪伪开办）1983年－1994年（复旦分校等合并开办）1994年－今 （在上海大学基础上四合一开办）
+            <block wx:for="{{historyList}}" wx:key="index">
+              <view class="introduceTitle">{{item.number}}. {{item.title}}</view>
+              <view class="introduceText">{{item.text}}</view>
+            </block>
         </view>
       </view>
       <view class="bodyInfo {{currentTab === 2 ? 'bodyCurrent': ''}}">
+        数据暂无
         <view class="directBtn1"    bind:tap="shangDaHistory_sub1">
          <indexBtn url="/pages/shangDaHistory_sub1/shangDaHistory_sub1" src="../../img/baricon/indexBGC.jpg" text="党史故事1" />
         </view>
@@ -25,12 +29,12 @@
       </view>
       <view class="bodyInfo {{currentTab === 3 ? 'bodyCurrent': ''}}">
         <view class="introduce">
-         活动照片、宣传稿
+         数据暂无
         </view>
       </view>
       <view class="bodyInfo {{currentTab === 4 ? 'bodyCurrent': ''}}">
         <view class="introduce">
-         活动照片、宣传稿
+         数据暂无
         </view>
       </view>
     </view>

@@ -3,7 +3,7 @@
 <swiper class="swiper s-class" autoplay circular>
   <block>
     <swiper-item wx:for="{{imgList}}" wx:key="index">
-      <image src="{{item}}"></image>
+      <image src="data:image/png;base64,{{item}}"></image>
     </swiper-item>
   </block>
 </swiper>

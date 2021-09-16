@@ -9,7 +9,7 @@
 
 .imgComponent {
   margin-bottom: 30rpx;
-  width: 220rpx;
+  width: 30%;
   height: 350rpx;
 }
 

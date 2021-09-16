@@ -4,9 +4,6 @@
   height: 400rpx;
 }
 
-.text {
-  margin: auto;
-}
 
 .directBtn {
   display: flex;
@@ -15,10 +12,17 @@
   padding: 40rpx;
 }
 
-.title {
-  font-size: 36rpx;
+.totalTitle {
+  font-size: 42rpx;
   font-weight: 700;
   text-align: center;
+}
+
+
+.text {
+  margin-top: 15rpx;
+  font-size: 36rpx;
+  line-height: 1.5;
 }
 
 .introduce {

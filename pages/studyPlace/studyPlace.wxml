@@ -1,15 +1,17 @@
 <!--pages/studyPlace/studyPlace.wxml-->
 <view class="container">
-  <my-swiper s-class="swiperStyle" imgList="{{revImgList}}" />
+  <my-swiper s-class="swiperStyle" imgList="{{swiperUrl}}" />
   <view class="navBar">
     <view class="header">
-      <view class="headerInfo {{currentTab === 1 ? 'infoCurrent': ''}}" bind:tap="changeNavTab" data-id="1">浙江省第一师范</view>
+      <view class="headerInfo {{currentTab === 1 ? 'infoCurrent': ''}}" bind:tap="changeNavTab" data-id="1">浙江省第一师范
+      </view>
       <view class="headerInfo {{currentTab === 2 ? 'infoCurrent': ''}}" bind:tap="changeNavTab" data-id="2">求学历程</view>
-      <view class="headerInfo {{currentTab === 3 ? 'infoCurrent': ''}}" bind:tap="changeNavTab" data-id="3">我心中的施存统</view>
+      <view class="headerInfo {{currentTab === 3 ? 'infoCurrent': ''}}" bind:tap="changeNavTab" data-id="3">我心中的施存统
+      </view>
     </view>
     <view class="body">
       <view class="bodyInfo {{currentTab === 1 ? 'bodyCurrent': ''}}">
-      <!--  学校简介  -->
+        <!--  学校简介  -->
         <view class="school_headline">
           浙江省立第一师范学校
         </view>
@@ -33,79 +35,25 @@
         </view>
       </view> <!-- bodyinfo 学校介绍 -->
 
-    <!-- 求学/革命 历程 -->
+      <!-- 求学/革命 历程 -->
       <view class="bodyInfo {{currentTab === 2 ? 'bodyCurrent': ''}}">
         <!-- 布局：上面图片，下面文字 点击弹出详细介绍-->
         <!-- 容器1：浙江省立第一中学求学-->
         <view class="qiuxue_container">
-          <view class="box_container" bind:tap="study_sub1">
-            <!-- 图片部分 -->
-            <image class="qiuxue_img" src='../../img/study_place/qiuxue/shi_1.jpg'></image>
-            <!-- 文字部分 -->
-            <view> 求学历程 </view>
-          </view><!-- 容器1：浙江省立第一中学求学-->
+          <block wx:for="{{processImgList}}" wx:key="index">
+            <view class="box_container">
+              <!-- 图片部分 -->
+              <image class="qiuxue_img" src='data:image/png;base64,{{item.url}}'></image>
+              <!-- 文字部分 -->
+              <view> {{item.title}} </view>
+            </view>
+          </block>
 
-          <!-- 容器2：放弃参加中共一大-->
-          <view class="box_container" bind:tap="study_sub2">
-            <!-- 图片部分 -->
-            <image class="qiuxue_img" src='../../img/study_place/qiuxue/中共一大.jpg'></image>
-            <!-- 文字部分 -->
-            <view> 放弃参加中共一大 </view>
-          </view><!-- 容器2：放弃参加中共一大-->
-        
-          <!-- 容器3：当选团中央书记-->
-          <view class="box_container_right" bind:tap="study_sub3">
-            <!-- 图片部分 -->
-            <image class="qiuxue_img" src='../../img/study_place/qiuxue/中国社会主义青年团旧址.jpg'></image>
-            <!-- 文字部分 -->
-            <view> 当选团中央书记 </view>
-          </view><!-- 容器3：当选团中央书记-->
+        </view><!-- bodyinfo 求学历程 -->
 
-          <!-- 容器4：上海大学任教 -->
-          <view class="box_container" bind:tap="study_sub4">
-            <!-- 图片部分 -->
-            <image class="qiuxue_img" src='../../img/study_place/qiuxue/上海大学任教.jpg'></image>
-            <!-- 文字部分 -->
-            <view> 上海大学任教 </view>
-          </view><!-- 容器4：上海大学任教 -->
-
-          <!-- 容器5：民主革命的战士 -->
-          <view class="box_container" bind:tap="study_sub5">
-            <!-- 图片部分 -->
-            <image class="qiuxue_img" src='../../img/study_place/qiuxue/民主建国会_2.jpg'></image>
-            <!-- 文字部分 -->
-            <view> 民主革命的战士 </view>
-          </view><!-- 容器5：民主革命的战士 -->
-
-          <!-- 容器6：《浙潮第一声》 -->
-          <view class="box_container_right" bind:tap="study_sub6">
-            <!-- 图片部分 -->
-            <image class="qiuxue_img" src='../../img/study_place/qiuxue/浙潮第一声封面.jpg'></image>
-            <!-- 文字部分 -->
-            <view> 《浙潮第一声》 </view>
-          </view><!-- 容器6：《浙潮第一声》 -->
-
-          <!-- 容器7：《浙江新潮》 -->
-          <view class="box_container" bind:tap="study_sub7">
-            <!-- 图片部分 -->
-            <image class="qiuxue_img" src='../../img/study_place/qiuxue/浙江新潮2.jpg'></image>
-            <!-- 文字部分 -->
-            <view> 《浙江新潮》 </view>
-          </view><!-- 容器7：《浙江新潮》 -->
-
-          <!-- 容器8：《非孝》 -->
-          <view class="box_container" bind:tap="study_sub8">
-            <!-- 图片部分 -->
-            <image class="qiuxue_img" src='../../img/study_place/qiuxue/非孝.jpg'></image>
-            <!-- 文字部分 -->
-            <view> 《非孝》 </view>
-          </view><!-- 容器8：《非孝》 -->
-
+        <view class="bodyInfo {{currentTab === 3 ? 'bodyCurrent': ''}}">
+          数据暂无
         </view>
-      </view><!-- bodyinfo 求学历程 -->
-
-      <view class="bodyInfo {{currentTab === 3 ? 'bodyCurrent': ''}}">
-       师生采访资料
       </view>
     </view>
   </view>

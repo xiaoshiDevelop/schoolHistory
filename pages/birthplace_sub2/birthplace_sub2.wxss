@@ -1,1 +1,16 @@
 /* pages/birthplace_sub/birthplace_sub2.wxss */
+.container {
+    padding: 20rpx;
+}
+
+.question {
+    font-size: 32rpx;
+    font-weight: 700;
+}
+
+.answer {
+    text-indent: 2em;
+    font-size: 32rpx;
+    line-height: 2;
+    margin: 20rpx 0;
+}

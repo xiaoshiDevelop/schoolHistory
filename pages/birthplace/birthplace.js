@@ -5,26 +5,60 @@ Page({
    * 页面的初始数据
    */
   data: {
-    revImgList: ["../../img/IMG_birthplace_2.jpg", "../../img/IMG_birthplace_1.jpg"],
+    revImgList: [],
     currentTab: 2,
+    villageIntroduce: "",
+    count: 0
   },
 
   changeNavTab(evt) {
     //切换tab栏的点击事件，通过修改data中的currentTab实现
     const currentIdx = evt.target.dataset.id;
-    if(this.data.currentTab !== currentIdx) {
+    if (this.data.currentTab !== currentIdx) {
       this.setData({
         currentTab: +currentIdx
       })
     }
   },
 
-
+  hideToast(isTest=false) {
+    this.setData({
+      count: isTest? this.data.count : this.data.count + 1
+    }, () => {
+      if (this.data.count >= 2) {
+        wx.hideNavigationBarLoading();
+      }
+    })
+  },
+  
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    
+    wx.showNavigationBarLoading()
+    wx.request({
+      url: 'https://shupartybuilding.com/api/text/birth_introduce?type=village',
+      success: ({
+        data
+      }) => {
+        const {result: villageIntroduce} = data;
+        this.setData({
+          villageIntroduce
+        }, this.hideToast)
+      }
+    })
+    wx.request({
+      url: 'https://shupartybuilding.com/api/img/studyPlace_img',
+      success: ({
+        data
+      }) => {
+        const {result} = data;
+        this.setData({
+          revImgList: result.imgObjArr
+        }, this.hideToast)
+      }
+    })
   },
 
   /**
@@ -38,7 +72,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    if (this.data.count < 2) {
+      wx.showNavigationBarLoading();
+    }
+    this.hideToast(true);
   },
 
   /**
@@ -75,17 +112,17 @@ Page({
   onShareAppMessage: function () {
 
   },
-  
+
 
   birth_sub1() {
     wx.navigateTo({
-      url: '../birthplace_sub1/birthplace_sub1',                                                 
+      url: '../birthplace_sub1/birthplace_sub1',
     })
   },
   birth_sub2() {
     wx.navigateTo({
-      url: '../birthplace_sub2/birthplace_sub2',                                                 
+      url: '../birthplace_sub2/birthplace_sub2',
     })
   }
-  
+
 })

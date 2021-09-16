@@ -5,14 +5,49 @@ Page({
    * 页面的初始数据
    */
   data: {
-    swiperImgList: ["../../img/IMG20210806152030.jpg", "../../img/IMG20210806152116.jpg", "../../img/IMG20210806152039.jpg", "../../img/IMG20210806152701.jpg"]
+    swiperImgList: [],
+    introduce: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    function hideToast() {
+      ++count;
+      if(count >= 2) {
+        wx.hideNavigationBarLoading();
+      }
+    }
 
+    let count = 0;
+    wx.showNavigationBarLoading()
+    
+    wx.request({
+      url: 'https://shupartybuilding.com/api/text/main_introduce',
+      success: ({ data }) => {
+        const { result } = data;
+        let introduce = [];
+        for(const title in result) {
+          introduce.push({
+            title,
+            text: result[title]
+          })
+        }
+        this.setData({
+          introduce
+        }, hideToast)
+      }
+    })
+    wx.request({
+      url: 'https://shupartybuilding.com/api/img/main_img',
+      success: ({ data }) => {
+        const { result } = data;
+        this.setData({
+          swiperImgList: result.imgObjArr
+        }, hideToast)
+      }
+    })
   },
 
   /**

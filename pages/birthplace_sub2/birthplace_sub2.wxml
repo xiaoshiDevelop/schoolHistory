@@ -1,13 +1,9 @@
 <!--pages/birthplace_sub/birthplace_sub2.wxml-->
 <view class="container">
-
-  
-  
-    <view class="body">
-      <view class="introduce">
-        采访记录
-      </view>
-   
+  <block wx:for="{{interview}}" wx:key="key">
+    <view class="introduce">
+      <view class="question">{{item.number}}：{{item.question}}</view>
+      <view class="answer">{{item.answer}}</view>
     </view>
-  
+  </block>
 </view>

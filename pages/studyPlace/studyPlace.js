@@ -6,18 +6,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-    revImgList: ["../../img/study_place/top/杭州高级中学-1.jpg",
-                 "../../img/study_place/top/杭州高级中学-2.jpg",
-                 "../../img/study_place/top/杭州高级中学-3.jpg",
-                 "../../img/study_place/top/杭州高级中学-4.jpg",
-                 "../../img/study_place/top/杭州高级中学-5.jpg",
-                 "../../img/study_place/top/杭州高级中学-6.jpg",
-                 "../../img/study_place/top/杭州高级中学-7.jpg",
-                 "../../img/study_place/top/杭州高级中学-8.jpg",
-                 "../../img/study_place/top/杭州高级中学-9.jpg"],
     currentTab: 2,
     showDialog_1:false,
     showDialog_2:false,
+    swiperUrl: [],
+    processImgList: [],
+    count: 0
   },
 
   changeNavTab(evt) {
@@ -30,12 +24,48 @@ Page({
     }
   },
 
-  
+  hideToast(isTest=false) {
+    this.setData({
+      count: isTest? this.data.count : this.data.count + 1
+    }, () => {
+      if (this.data.count >= 2) {
+        wx.hideNavigationBarLoading();
+      }
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.showNavigationBarLoading()
 
+    wx.request({
+      url: 'https://shupartybuilding.com/api/img/study_process_img',
+      success: ({ data }) => {
+        const { result: {img, title} } = data;
+        let processImgList = [];
+        for(let i = 0; i < img.length; ++i) {
+          processImgList.push({
+            title: title[i],
+            url: img[i]
+          })
+        }
+        this.setData({
+          processImgList
+        }, this.hideToast)
+      }
+    })
+
+    wx.request({
+      url: 'https://shupartybuilding.com/api/img/studyPlace_img',
+      success: ({ data }) => {
+        const { result } = data;
+        this.setData({
+          swiperUrl: result.imgObjArr
+        }, this.hideToast)
+      }
+    })
   },
 
   /**
@@ -49,6 +79,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    if (this.data.count < 2) {
+      wx.showNavigationBarLoading();
+    }
+    this.hideToast(true);
 
   },
 

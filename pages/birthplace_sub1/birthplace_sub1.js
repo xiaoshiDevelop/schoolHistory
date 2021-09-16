@@ -5,14 +5,45 @@ Page({
    * 页面的初始数据
    */
   data: {
-    revImgList: ["../../img/IMG_guju.jpg"]
+    revImgList: [],
+    formerIntroduce: "",
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    function hideToast() {
+      ++count;
+      if(count >= 2) {
+        wx.hideNavigationBarLoading();
+      }
+    }
 
+    wx.showNavigationBarLoading()
+    let count = 0
+    wx.request({
+      url: 'https://shupartybuilding.com/api/img/birth_img',
+      success: ({
+        data
+      }) => {
+        const {result} = data;
+        this.setData({
+          revImgList: result.img
+        }, hideToast)
+      }
+    })
+    wx.request({
+      url: 'https://shupartybuilding.com/api/text/birth_introduce?type=former',
+      success: ({
+        data
+      }) => {
+        const {result: formerIntroduce} = data;
+        this.setData({
+          formerIntroduce
+        }, hideToast)
+      }
+    })
   },
 
   /**

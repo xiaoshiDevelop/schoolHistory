@@ -1,14 +1,17 @@
 <!--components/bigImg/index.wxml-->
 <view class="imgShow">
   <block wx:for="{{imgShowData}}" wx:key="index">
-    <view class="imgComponent" bind:tap="showBigImg" data-src="{{item}}">
-      <image src="{{item}}" />
+  <!--  bind:tap="showBigImg" -->
+    <view class="imgComponent" data-src="{{item}}">
+      <image src="data:image/png;base64,{{item}}" />
     </view>
   </block>
+  <!-- 
   <view class="bigImgContainer {{isBigImgShow?'show':''}}" bind:tap="closeBigImg">
     <view class="content" catch:tap="preventClose">
       <image src="{{bigImgSrc}}"></image>
       <view class="title">图片标题</view>
     </view>
   </view>
+   -->
 </view>

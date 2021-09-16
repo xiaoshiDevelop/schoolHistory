@@ -5,14 +5,31 @@ Page({
    * 页面的初始数据
    */
   data: {
-    imgShowData: ["../../img/IMG20210806152030.jpg", "../../img/IMG20210806152116.jpg", "../../img/IMG20210806152039.jpg", "../../img/IMG20210806152701.jpg", "../../img/IMG20210806152133.jpg", "../../img/IMG20210806152337.jpg"],
+    imgShowData: [],
+    count: 0,
+    page: 0,
+    isSend: false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.showNavigationBarLoading()
+    wx.request({
+      url: `https://shupartybuilding.com/api/img/revolution_img?start=${this.data.page}&count=12`,
+      success: ({
+        data
+      }) => {
+        const {
+          imgObjArr,
+        } = data.result;
+        this.setData({
+          imgShowData: imgObjArr,
+          page: this.data.page + 1
+        }, wx.hideNavigationBarLoading)
+      }
+    })
   },
 
   /**
@@ -54,7 +71,28 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    if (!this.data.isSend) {
+      this.setData({
+        isSend: true
+      })
+      wx.showNavigationBarLoading()
+      wx.request({
+        url: `https://shupartybuilding.com/api/img/revolution_img?start=${this.data.page}&count=12`,
+        success: ({
+          data
+        }) => {
+          const {
+            imgObjArr,
+            count
+          } = data.result;
+          this.setData({
+            imgShowData: this.data.imgShowData.concat(imgObjArr),
+            page: this.data.page + 1,
+            isSend: false
+          }, wx.hideNavigationBarLoading)
+        }
+      })
+    }
   },
 
   /**

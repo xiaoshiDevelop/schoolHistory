@@ -78,21 +78,12 @@ view.bodyCurrent {
 
 /* 求学历程样式 */
 .qiuxue_container{
+  display: flex;
   padding: 20rpx;
-  width: 90%; 
-  margin: 0 auto;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 .box_container{
-  float: left;
-  font-size: 24rpx;
-  text-align: center;
-  width: 30%;
-  padding-right: 5%;
-  padding-top: 15rpx;
-  padding-bottom: 15rpx;
-}
-.box_container_right{
-  float: left;
   font-size: 24rpx;
   text-align: center;
   width: 30%;

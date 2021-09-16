@@ -4,3 +4,9 @@
   margin: 50rpx;
   height: 400rpx;
 }
+
+.introduce {
+  text-indent: 2em;
+  padding: 30rpx;
+  line-height: 1.5;
+}

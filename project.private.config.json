@@ -1,48 +1,60 @@
 {
-  "setting": {},
-  "condition": {
-    "plugin": {
-      "list": []
-    },
-    "game": {
-      "list": []
-    },
-    "gamePlugin": {
-      "list": []
-    },
-    "miniprogram": {
-      "list": [
-        {
-          "name": "birthplace",
-          "pathName": "pages/birthplace/birthplace",
-          "query": "",
-          "scene": null
+    "setting": {},
+    "condition": {
+        "plugin": {
+            "list": []
         },
-        {
-          "name": "studyPlace",
-          "pathName": "pages/studyPlace/studyPlace",
-          "query": "",
-          "scene": null
+        "game": {
+            "list": []
         },
-        {
-          "name": "revolution",
-          "pathName": "pages/revolution/revolution",
-          "query": "",
-          "scene": null
+        "gamePlugin": {
+            "list": []
         },
-        {
-          "name": "shangDaHistory",
-          "pathName": "pages/shangDaHistory/shangDaHistory",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "peopleInfo",
-          "pathName": "pages/peopleInfo/peopleInfo",
-          "query": "",
-          "scene": null
+        "miniprogram": {
+            "list": [
+                {
+                    "name": "birthplace",
+                    "pathName": "pages/birthplace/birthplace",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "studyPlace",
+                    "pathName": "pages/studyPlace/studyPlace",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "revolution",
+                    "pathName": "pages/revolution/revolution",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "shangDaHistory",
+                    "pathName": "pages/shangDaHistory/shangDaHistory",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "peopleInfo",
+                    "pathName": "pages/peopleInfo/peopleInfo",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/moreImg/moreImg",
+                    "pathName": "pages/moreImg/moreImg",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/birthplace_sub2/birthplace_sub2",
+                    "pathName": "pages/birthplace_sub2/birthplace_sub2",
+                    "query": "",
+                    "scene": null
+                }
+            ]
         }
-      ]
     }
-  }
 }

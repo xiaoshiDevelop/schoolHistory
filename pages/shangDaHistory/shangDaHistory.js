@@ -5,8 +5,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-    revImgList: ["../../img/shangdashi2.jpg", "../../img/shandashi1.jpg"],
+    revImgList: [],
     currentTab: 2,
+    partyHistory: "",
+    historyList: [],
+    count: 0
   },
 
   changeNavTab(evt) {
@@ -19,12 +22,48 @@ Page({
     }
   },
 
+  hideToast(isTest=false) {
+    this.setData({
+      count: isTest? this.data.count : this.data.count + 1
+    }, () => {
+      if (this.data.count >= 2) {
+        wx.hideNavigationBarLoading();
+      }
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.showNavigationBarLoading()
 
+    wx.request({
+      url: 'https://shupartybuilding.com/api/text/history_text?type=history',
+      success: ({data}) => {
+        const {result} = data;
+        let historyList = [], number = 1;
+        for(const title in result) {
+          historyList.push({
+            number: number++,
+            title,
+            text: result[title]
+          })
+        }
+        this.setData({
+          historyList
+        }, this.hideToast)
+      }
+    })
+    wx.request({
+      url: 'https://shupartybuilding.com/api/img/history_img',
+      success: ({data}) => {
+        const {result} = data;
+        this.setData({
+          revImgList: result.imgObjArr
+        }, this.hideToast)
+      }
+    })
   },
 
   /**
@@ -38,7 +77,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    if (this.data.count < 2) {
+      wx.showNavigationBarLoading();
+    }
+    this.hideToast(true);
   },
 
   /**

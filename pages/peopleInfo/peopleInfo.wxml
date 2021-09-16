@@ -2,6 +2,6 @@
 <view class="container">
   <my-swiper s-class="swiperStyle" imgList="{{imgList}}" />
   <view class="introduce">
-    人物介绍
+    {{introduce}}
   </view>
 </view>

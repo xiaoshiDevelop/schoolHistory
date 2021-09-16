@@ -1,4 +1,4 @@
-// pages/studyPlace_subPages/求学1/求学1.js
+// pages/studyPlace_subPages/study_place1/studyPlace_sub1.js
 Page({
 
   /**

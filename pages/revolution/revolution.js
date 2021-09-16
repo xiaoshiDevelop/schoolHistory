@@ -5,17 +5,19 @@ Page({
    * 页面的初始数据
    */
   data: {
-    revImgList: ["../../img/IMG20210806152030.jpg", "../../img/IMG20210806152116.jpg", "../../img/IMG20210806152039.jpg", "../../img/IMG20210806152701.jpg"],
+    revImgList: [],
     currentTab: 1,
-    imgShowData: ["../../img/IMG20210806152030.jpg", "../../img/IMG20210806152116.jpg", "../../img/IMG20210806152039.jpg", "../../img/IMG20210806152701.jpg", "../../img/IMG20210806152133.jpg", "../../img/IMG20210806152337.jpg"],
+    imgShowData: [],
     isBigImgShow: false,
-    bigImgSrc: ""
+    bigImgSrc: "",
+    introduce: "",
+    count: 0
   },
 
   changeNavTab(evt) {
     //切换tab栏的点击事件，通过修改data中的currentTab实现
     const currentIdx = evt.target.dataset.id;
-    if(this.data.currentTab !== currentIdx) {
+    if (this.data.currentTab !== currentIdx) {
       this.setData({
         currentTab: +currentIdx
       })
@@ -28,11 +30,62 @@ Page({
     })
   },
 
+  hideToast(isTest=false) {
+    this.setData({
+      count: isTest? this.data.count : this.data.count + 1
+    }, () => {
+      if (this.data.count >= 3) {
+        wx.hideNavigationBarLoading();
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
 
+    wx.showNavigationBarLoading();
+
+    wx.request({
+      url: 'https://shupartybuilding.com/api/img/revolution_main_img',
+      success: ({
+        data
+      }) => {
+        const {
+          result
+        } = data;
+        this.setData({
+          revImgList: result.imgObjArr
+        }, this.hideToast)
+      }
+    })
+    wx.request({
+      url: 'https://shupartybuilding.com/api/img/revolution_img?start=0&count=6',
+      success: ({
+        data
+      }) => {
+        const {
+          imgObjArr,
+          count
+        } = data.result;
+        this.setData({
+          imgShowData: imgObjArr
+        }, this.hideToast)
+      }
+    })
+    wx.request({
+      url: 'https://shupartybuilding.com/api/text/revolution_text',
+      success: ({
+        data
+      }) => {
+        const {
+          result: introduce
+        } = data;
+        this.setData({
+          introduce
+        }, this.hideToast)
+      }
+    })
   },
 
   /**
@@ -46,7 +99,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    if (this.data.count < 3) {
+      wx.showNavigationBarLoading();
+    }
+    this.hideToast(true);
   },
 
   /**
@@ -73,9 +129,7 @@ Page({
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
-
-  },
+  onReachBottom: function () {},
 
   /**
    * 用户点击右上角分享

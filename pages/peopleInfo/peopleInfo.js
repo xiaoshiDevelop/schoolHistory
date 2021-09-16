@@ -5,14 +5,45 @@ Page({
    * 页面的初始数据
    */
   data: {
-    imgList: ["../../img/study_place/qiuxue/shi_1.jpg", "../../img/study_place/qiuxue/非孝.jpg", "../../img/study_place/qiuxue/上海社会主义青年团.jpg"]
+    imgList: [],
+    introduce: "",
+    count: 0
+  },
+
+  hideToast(isTest=false) {
+    this.setData({
+      count: isTest? this.data.count : this.data.count + 1
+    }, () => {
+      if (this.data.count >= 2) {
+        wx.hideNavigationBarLoading();
+      }
+    })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    // prople_img
+    wx.showNavigationBarLoading()
+    wx.request({
+      url: 'https://shupartybuilding.com/api/text/prople_introduce',
+      success: ({ data }) => {
+        const { result: introduce } = data;
+        this.setData({
+          introduce
+        }, this.hideToast)
+      }
+    })
+    wx.request({
+      url: 'https://shupartybuilding.com/api/img/prople_img',
+      success: ({ data }) => {
+        const { result } = data;
+        this.setData({
+          imgList: result.imgObjArr
+        }, this.hideToast)
+      }
+    })
   },
 
   /**
@@ -26,7 +57,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    if (this.data.count < 2) {
+      wx.showNavigationBarLoading();
+    }
+    this.hideToast(true);
   },
 
   /**

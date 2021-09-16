@@ -73,6 +73,7 @@ view.bodyCurrent {
 }
 .introduce {
   padding: 80rpx  60rpx  40rpx  60rpx;
-  font-size: 28rpx;
+  font-size: 32rpx;
+  text-indent: 2em;
   line-height: 1.5;
 }

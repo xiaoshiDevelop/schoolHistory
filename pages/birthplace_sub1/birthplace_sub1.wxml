@@ -6,7 +6,7 @@
   
     <view class="body">
       <view class="introduce">
-        故居简介
+        {{formerIntroduce}}
       </view>
    
     </view>
